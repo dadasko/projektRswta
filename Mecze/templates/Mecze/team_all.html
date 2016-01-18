@@ -1,0 +1,15 @@
+{% extends 'Mecze/base.html' %}
+
+{% block selected_home %} {% endblock %}
+{% block selected_teams %} class="selected-item"{% endblock %}
+{% block selected_table %} {% endblock %}
+
+{% block content %}
+<h2>Teams</h2>
+<table>
+	<tr><th>ID</th><th>Nazwa</th><tr>
+		{% for zespol in zespoly %}
+			<tr><td>{{forloop.counter}}</td><td><a href="{% url 'Mecze.views.team_detail' druzyna=zespol.id %}">{{zespol.nazwa}}</a></td></tr>
+		{% endfor %}
+</table>
+{% endblock content %}

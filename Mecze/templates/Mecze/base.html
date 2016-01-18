@@ -1,0 +1,46 @@
+{% load staticfiles %}
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Mecze - project Django</title>
+<link rel="stylesheet" href="{% static 'css/mecze.css' %}" type="text/css" />
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
+</head>
+
+<body>
+
+		<section id="body" class="width">
+			<aside id="sidebar" class="column-left">
+
+			<header>
+				<h1><a href="/">Mecze</a></h1>
+
+				<h2>Look at all these things!</h2>
+				
+			</header>
+
+			<nav id="mainnav">
+  				<ul>
+					<li{% block selected_home %} class="selected-item"{% endblock %}><a href="/">Home</a></li>
+					<li{% block selected_teams %} {% endblock %}><a href="/teams">Teams</a></li>
+					<li{% block selected_table %} {% endblock %}><a href="/tabela">Table</a></li>
+				</ul>
+			</nav>
+			
+			</aside>
+			<section id="content" class="column-right">
+                		
+	    <article>
+			{% block content %}
+			{% endblock %}
+		</article>
+
+			<footer class="clear">
+				<p>Pul Adam, Oginski Grzegorz, Kozlowski Michal</p>
+			</footer>
+		</section>
+		<!--<div class="clear"></div>-->
+	</section>
+</body>
+</html>

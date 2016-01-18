@@ -1,0 +1,43 @@
+{% extends 'Mecze/base.html' %}
+
+{% block selected_home %} class="selected-item" {% endblock %}
+{% block selected_teams %} {% endblock %}
+{% block selected_table %} {% endblock %}
+
+{% block content %}
+<h1>Sklad gospodarza</h1>
+	<table>
+	<tr><th>Imie</th><th>Nazwisko</th><th>Pozycja</th></tr>
+	<tr><td>{{mecz.sklad_gospodarza.zawodnik_1.imie}}</td><td>{{mecz.sklad_gospodarza.zawodnik_1.nazwisko}}</td><td>{{mecz.sklad_gospodarza.pozycja_1.nazwa}}</td></tr>
+	<tr><td>{{mecz.sklad_gospodarza.zawodnik_2.imie}}</td><td>{{mecz.sklad_gospodarza.zawodnik_2.nazwisko}}</td><td>{{mecz.sklad_gospodarza.pozycja_2.nazwa}}</td></tr>
+	<tr><td>{{mecz.sklad_gospodarza.zawodnik_3.imie}}</td><td>{{mecz.sklad_gospodarza.zawodnik_3.nazwisko}}</td><td>{{mecz.sklad_gospodarza.pozycja_3.nazwa}}</td></tr>
+	<tr><td>{{mecz.sklad_gospodarza.zawodnik_4.imie}}</td><td>{{mecz.sklad_gospodarza.zawodnik_4.nazwisko}}</td><td>{{mecz.sklad_gospodarza.pozycja_4.nazwa}}</td></tr>
+	<tr><td>{{mecz.sklad_gospodarza.zawodnik_5.imie}}</td><td>{{mecz.sklad_gospodarza.zawodnik_5.nazwisko}}</td><td>{{mecz.sklad_gospodarza.pozycja_5.nazwa}}</td></tr>
+	<tr><td>{{mecz.sklad_gospodarza.zawodnik_6.imie}}</td><td>{{mecz.sklad_gospodarza.zawodnik_6.nazwisko}}</td><td>{{mecz.sklad_gospodarza.pozycja_6.nazwa}}</td></tr>
+	<tr><td>{{mecz.sklad_gospodarza.zawodnik_7.imie}}</td><td>{{mecz.sklad_gospodarza.zawodnik_7.nazwisko}}</td><td>{{mecz.sklad_gospodarza.pozycja_7.nazwa}}</td></tr>
+	<tr><td>{{mecz.sklad_gospodarza.zawodnik_8.imie}}</td><td>{{mecz.sklad_gospodarza.zawodnik_8.nazwisko}}</td><td>{{mecz.sklad_gospodarza.pozycja_8.nazwa}}</td></tr>
+	<tr><td>{{mecz.sklad_gospodarza.zawodnik_9.imie}}</td><td>{{mecz.sklad_gospodarza.zawodnik_9.nazwisko}}</td><td>{{mecz.sklad_gospodarza.pozycja_9.nazwa}}</td></tr>
+	<tr><td>{{mecz.sklad_gospodarza.zawodnik_10.imie}}</td><td>{{mecz.sklad_gospodarza.zawodnik_10.nazwisko}}</td><td>{{mecz.sklad_gospodarza.pozycja_10.nazwa}}</td></tr>
+	<tr><td>{{mecz.sklad_gospodarza.zawodnik_11.imie}}</td><td>{{mecz.sklad_gospodarza.zawodnik_11.nazwisko}}</td><td>{{mecz.sklad_gospodarza.pozycja_11.nazwa}}</td></tr>
+	</table>
+	<h1>Sklad Gosci</h1>
+	<table>
+	<tr><th>Imie</th><th>Nazwisko</th><th>Pozycja</th></tr>
+	<tr><td>{{mecz.sklad_goscia.zawodnik_1.imie}}</td><td>{{mecz.sklad_goscia.zawodnik_1.nazwisko}}</td><td>{{mecz.sklad_goscia.pozycja_1.nazwa}}</td></tr>
+	<tr><td>{{mecz.sklad_goscia.zawodnik_2.imie}}</td><td>{{mecz.sklad_goscia.zawodnik_2.nazwisko}}</td><td>{{mecz.sklad_goscia.pozycja_2.nazwa}}</td></tr>
+	<tr><td>{{mecz.sklad_goscia.zawodnik_3.imie}}</td><td>{{mecz.sklad_goscia.zawodnik_3.nazwisko}}</td><td>{{mecz.sklad_goscia.pozycja_3.nazwa}}</td></tr>
+	<tr><td>{{mecz.sklad_goscia.zawodnik_4.imie}}</td><td>{{mecz.sklad_goscia.zawodnik_4.nazwisko}}</td><td>{{mecz.sklad_goscia.pozycja_4.nazwa}}</td></tr>
+	<tr><td>{{mecz.sklad_goscia.zawodnik_5.imie}}</td><td>{{mecz.sklad_goscia.zawodnik_5.nazwisko}}</td><td>{{mecz.sklad_goscia.pozycja_5.nazwa}}</td></tr>
+	<tr><td>{{mecz.sklad_goscia.zawodnik_6.imie}}</td><td>{{mecz.sklad_goscia.zawodnik_6.nazwisko}}</td><td>{{mecz.sklad_goscia.pozycja_6.nazwa}}</td></tr>
+	<tr><td>{{mecz.sklad_goscia.zawodnik_7.imie}}</td><td>{{mecz.sklad_goscia.zawodnik_7.nazwisko}}</td><td>{{mecz.sklad_goscia.pozycja_7.nazwa}}</td></tr>
+	<tr><td>{{mecz.sklad_goscia.zawodnik_8.imie}}</td><td>{{mecz.sklad_goscia.zawodnik_8.nazwisko}}</td><td>{{mecz.sklad_goscia.pozycja_8.nazwa}}</td></tr>
+	<tr><td>{{mecz.sklad_goscia.zawodnik_9.imie}}</td><td>{{mecz.sklad_goscia.zawodnik_9.nazwisko}}</td><td>{{mecz.sklad_goscia.pozycja_9.nazwa}}</td></tr>
+	<tr><td>{{mecz.sklad_goscia.zawodnik_10.imie}}</td><td>{{mecz.sklad_goscia.zawodnik_10.nazwisko}}</td><td>{{mecz.sklad_goscia.pozycja_10.nazwa}}</td></tr>
+	<tr><td>{{mecz.sklad_goscia.zawodnik_11.imie}}</td><td>{{mecz.sklad_goscia.zawodnik_11.nazwisko}}</td><td>{{mecz.sklad_goscia.pozycja_11.nazwa}}</td></tr>
+	</table>
+<h1>Gole</h1>
+	{% for bramka in bramki %}
+						<h1>{{bramka.zawodnik.imie}} {{bramka.zawodnik.nazwisko}} '{{bramka.minuta}}</h1>
+	{% endfor %}
+	<p>Opis meczu: {{mecz.uwagi}}</p>
+{% endblock content %} 

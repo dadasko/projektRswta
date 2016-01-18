@@ -1,0 +1,8 @@
+
+{% extends 'Mecze/base.html' %}
+{% block content %}
+	{% for mecz in mecze %}
+						<h1>Kolejka: {{mecz.kolejka.nr_kolejki}}</h1>
+						<h2><a href="{% url 'Mecze.views.mecz' mecz=mecz.id %}">{{mecz.gospodarz.nazwa}} <span style="color: blue">{{mecz.gole_gospodarza}} : {{mecz.gole_goscia}}</span>     {{mecz.gosc.nazwa}}</a></h2>
+	{% endfor %}
+{% endblock content %} 

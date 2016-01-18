@@ -1,0 +1,18 @@
+{% extends 'Mecze/base.html' %}
+
+{% block selected_home %} {% endblock %}
+{% block selected_teams %} {% endblock %}
+{% block selected_table %} class="selected-item" {% endblock %}
+
+{% block content %}
+<h2>Teams</h2>
+<table>
+	<tr><th>Pos</th><th>Name</th><th>Played</th><th>Won</th><th>Tied</th><th>Points</th></tr>
+	{% for zespol, statystyka in statystyki %}
+	<tr><td>{{ forloop.counter }}</td><td>{{ zespol }}&nbsp;</td>
+		{% for element in statystyka %}
+			<td>{{ element }}&nbsp;</td>
+		{% endfor %}</tr>
+	{% endfor %}
+</table>
+{% endblock content %}

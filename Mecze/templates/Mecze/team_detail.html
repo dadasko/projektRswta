@@ -1,0 +1,12 @@
+{% extends 'Mecze/team_all.html' %}
+{% block content %}
+<h2>Team {{zespol.nazwa}}</h2>
+<p>{{zespol.opis}}</p>
+
+<table>
+		<tr><th>Imie</th><th>Nazwisko</th><th>Pozycja</th></tr>
+			{% for zawodnik in zawodnicy %}
+				<tr><td>{{zawodnik.imie}}</td><td>{{zawodnik.nazwisko}}</td><td>{{zawodnik.pozycja.nazwa}}</td></tr>
+			{% endfor %}
+</table>
+{% endblock content %}

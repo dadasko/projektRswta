@@ -1,0 +1,10 @@
+{% extends 'Mecze/base.html' %}
+{% block content %}
+<h2>Teams</h2>
+					{% for zawodnik in zawodnicy %}
+						{% for element in zawodnik %}
+							{{element}}&nbsp;
+						{% endfor %}
+						<br>
+					{% endfor %}
+{% endblock content %}
